@@ -1,6 +1,7 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 /*
 	Strata by HTML5 UP
 	html5up.net | @ajlkn
@@ -119,47 +120,44 @@ ul {
   list-style: none;
 }
 
-.neon-reveal {
-  margin: 0;
-  padding: 80px;
-  box-sizing: border-box;
-  justify-content: center;
+.neon-reveal-body {
   display: flex;
-  font-family: 'Arial', sans-serif;
-  white-space: wrap;
-  font-size: 2em;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+}
+
+.neon-reveal {
   position: relative;
-  overflow: hidden;
-  letter-spacing: 5px;
-  color: transparent; /* Set text color to transparent */
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5vw;
+  color: #252839;
+  -webkit-text-stroke: 0.2vw #383d52;
   text-transform: uppercase;
-  outline: none;
-  animation: reveal 10s linear infinite;
 }
 
-@keyframes reveal {
-  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
-    color: transparent; /* Set text color to transparent */
-    text-shadow: none;
-  }
-  18.1%, 20.1%, 30%, 50%, 60.1%, 80.1%, 90%, 92.1%, 100% {
-    color: #fff; /* Set text color to white */
-    text-shadow: 
-      0 0 5px #03bcf4, 
-      0 0 10px #03bcf4, 
-      0 0 15px #03bcf4, 
-      0 0 20px #03bcf4, 
-      0 0 25px #03bcf4, 
-      0 0 30px #03bcf4, 
-      0 0 35px #03bcf4;
-  }
+.neon-reveal::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #d8d513;
+  -webkit-text-stroke: 0vw #383d52;
+  border-right: 2px solid #fffb11;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
 }
 
-
-
-
-
+@keyframes animate {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
 
 .overlay {
   position: absolute;
@@ -2744,7 +2742,7 @@ input[type="button"]:disabled,
   -webkit-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
-  background-color: #07252d;
+  background-color: #252839;
   border-radius: 0.35em;
   background-attachment: scroll, scroll;
   background-position: top left, top left;
